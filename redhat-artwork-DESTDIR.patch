@@ -1,0 +1,68 @@
+diff -urN redhat-artwork-0.73/art/cursor/Bluecurve/Makefile.am /root/2/redhat-artwork-0.73/art/cursor/Bluecurve/Makefile.am
+--- redhat-artwork-0.73/art/cursor/Bluecurve/Makefile.am	Mon Feb 24 06:06:19 2003
++++ /root/2/redhat-artwork-0.73/art/cursor/Bluecurve/Makefile.am	Thu Aug 14 16:35:30 2003
+@@ -57,13 +57,13 @@
+ 	rm -rf Bluecurve
+ 
+ install-data-local:
+-	rm -rf $(datadir)/icons/Bluecurve/cursors
+-	mkdir -p $(datadir)/icons/Bluecurve/cursors
++	rm -rf $(DESTDIR)$(datadir)/icons/Bluecurve/cursors
++	mkdir -p $(DESTDIR)$(datadir)/icons/Bluecurve/cursors
+ 	for i in `cd Bluecurve && echo *` ; do						\
+ 	  if test -L Bluecurve/$$i ; then						\
+-	    cp -d Bluecurve/$$i $(datadir)/icons/Bluecurve/cursors/$$i ;		\
++	    cp -d Bluecurve/$$i $(DESTDIR)$(datadir)/icons/Bluecurve/cursors/$$i ;		\
+ 	  else										\
+-	    install -m 0644 Bluecurve/$$i $(datadir)/icons/Bluecurve/cursors/$$i ;	\
++	    install -m 0644 Bluecurve/$$i $(DESTDIR)$(datadir)/icons/Bluecurve/cursors/$$i ;	\
+           fi ;										\
+ 	done
+ 
+diff -urN redhat-artwork-0.73/art/cursor/Bluecurve-inverse/Makefile.am /root/2/redhat-artwork-0.73/art/cursor/Bluecurve-inverse/Makefile.am
+--- redhat-artwork-0.73/art/cursor/Bluecurve-inverse/Makefile.am	Mon Feb 24 06:06:19 2003
++++ /root/2/redhat-artwork-0.73/art/cursor/Bluecurve-inverse/Makefile.am	Thu Aug 14 16:35:47 2003
+@@ -57,13 +57,13 @@
+ 	rm -rf Bluecurve-inverse
+ 
+ install-data-local:
+-	rm -rf $(datadir)/icons/Bluecurve-inverse/cursors
+-	mkdir -p $(datadir)/icons/Bluecurve-inverse/cursors
++	rm -rf $(DESTDIR)$(datadir)/icons/Bluecurve-inverse/cursors
++	mkdir -p $(DESTDIR)$(datadir)/icons/Bluecurve-inverse/cursors
+ 	for i in `cd Bluecurve-inverse && echo *` ; do							\
+ 	  if test -L Bluecurve-inverse/$$i ; then							\
+-	    cp -d Bluecurve-inverse/$$i $(datadir)/icons/Bluecurve-inverse/cursors/$$i ;		\
++	    cp -d Bluecurve-inverse/$$i $(DESTDIR)$(datadir)/icons/Bluecurve-inverse/cursors/$$i ;		\
+ 	  else												\
+-	    install -m 0644 Bluecurve-inverse/$$i $(datadir)/icons/Bluecurve-inverse/cursors/$$i ;	\
++	    install -m 0644 Bluecurve-inverse/$$i $(DESTDIR)$(datadir)/icons/Bluecurve-inverse/cursors/$$i ;	\
+           fi ;												\
+ 	done
+ 
+diff -urN redhat-artwork-0.73/art/kde/kwin/Bluecurve/Makefile.am /root/2/redhat-artwork-0.73/art/kde/kwin/Bluecurve/Makefile.am
+--- redhat-artwork-0.73/art/kde/kwin/Bluecurve/Makefile.am	Fri Sep 13 17:07:28 2002
++++ /root/2/redhat-artwork-0.73/art/kde/kwin/Bluecurve/Makefile.am	Thu Aug 14 16:26:01 2003
+@@ -4,7 +4,7 @@
+ 
+ kwin_bluecurve_la_SOURCES = redhatclient.cpp
+ kwin_bluecurve_la_LIBADD = $(kde_libraries)/kwin.la
+-kwin_bluecurve_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
++kwin_bluecurve_la_LDFLAGS = $(all_libraries) -module
+ 
+ themedir = $(datadir)/apps/kwin
+ theme_DATA = bluecurve.desktop
+diff -urN redhat-artwork-0.73/art/pixmaps/Makefile.am /root/2/redhat-artwork-0.73/art/pixmaps/Makefile.am
+--- redhat-artwork-0.73/art/pixmaps/Makefile.am	Mon Jan 27 20:14:53 2003
++++ /root/2/redhat-artwork-0.73/art/pixmaps/Makefile.am	Thu Aug 14 16:28:50 2003
+@@ -28,8 +28,8 @@
+ EXTRA_DIST=$(pixmap_DATA)
+ 
+ install-data-local:
+-	mkdir -p $(datadir)/icons/Bluecurve/48x48/apps; \
+-	(cd $(datadir)/icons/Bluecurve/48x48/apps;	\
++	mkdir -p $(DESTDIR)$(datadir)/icons/Bluecurve/48x48/apps; \
++	(cd $(DESTDIR)$(datadir)/icons/Bluecurve/48x48/apps;	\
+ 	 for icon in $(pixmap_DATA); do			\
+ 		ln -s ../../../../pixmaps/$$icon . ;	\
+ 	 done);
