@@ -4,7 +4,7 @@
 Summary:	Bluecurve look & feel
 Summary(pl):	Wygl±dy Bluecurve
 Name:		redhat-artwork
-Version:	0.89
+Version:	0.95
 Release:	2
 Group:		Themes
 License:	GPL
