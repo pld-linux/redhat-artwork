@@ -64,14 +64,14 @@ GTK+ Bluecurve theme.
 Motyw Bluecurve dla GTK.
 
 %package -n metacity-theme-Bluecurve-redhat
-Summary:        Metacity Bluecurve theme
-Summary(pl):    Bluecurve dla Metacity
-Group:          Themes
-Requires:       icons-Bluecurve
+Summary:	Metacity Bluecurve theme
+Summary(pl):	Bluecurve dla Metacity
+Group:		Themes
+Requires:	icons-Bluecurve
 Provides:	metacity-theme-Bluecurve
-Obsoletes:      gtk2-theme-engine-Wonderland
-Obsoletes:      metacity-theme-Bluecurve
-Obsoletes:      gnome-theme-Bluecurve < 0.89
+Obsoletes:	gtk2-theme-engine-Wonderland
+Obsoletes:	metacity-theme-Bluecurve
+Obsoletes:	gnome-theme-Bluecurve < 0.89
 Conflicts:	metacity-themes-Bluecurve
 
 %description -n metacity-theme-Bluecurve-redhat
@@ -80,17 +80,16 @@ GTK+ Bluecurve Metacity.
 %description -n metacity-theme-Bluecurve-redhat -l pl
 Motyw Bluecurve dla Metacity.
 
-
 %package -n gnome-theme-Bluecurve
-Summary:        GNOME Bluecurve theme
-Summary(pl):    Bluecurve dla GNOME
-Group:          Themes
-Requires:       icons-Bluecurve
-Obsoletes:      gtk2-theme-engine-Wonderland
-Obsoletes:      metacity-theme-Bluecurve
+Summary:	GNOME Bluecurve theme
+Summary(pl):	Bluecurve dla GNOME
+Group:		Themes
+Requires:	icons-Bluecurve
+Obsoletes:	gtk2-theme-engine-Wonderland
+Obsoletes:	metacity-theme-Bluecurve
 Requires:	metacity-theme-Bluecurve
 Requires:	gtk2-theme-engine-Bluecurve
-Requires:       gtk-theme-engine-Bluecurve
+Requires:	gtk-theme-engine-Bluecurve
 
 %description -n gnome-theme-Bluecurve
 GNOME Bluecurve theme (gtk, gtk2, metacity).
@@ -98,15 +97,14 @@ GNOME Bluecurve theme (gtk, gtk2, metacity).
 %description -n gnome-theme-Bluecurve -l pl
 Motyw Bluecurve dla GNOME (gtk, gtk2, metacity).
 
-
 %package -n gtk2-theme-engine-Bluecurve
-Summary:        GTK+2 Bluecurve theme
-Summary(pl):    Bluecurve dla GTK+2
-Group:          Themes
-Requires:       icons-Bluecurve
-Obsoletes:      gtk2-theme-engine-Wonderland
-Obsoletes:      metacity-theme-Bluecurve
-Obsoletes:      gnome-theme-Bluecurve < 0.89
+Summary:	GTK+2 Bluecurve theme
+Summary(pl):	Bluecurve dla GTK+2
+Group:		Themes
+Requires:	icons-Bluecurve
+Obsoletes:	gtk2-theme-engine-Wonderland
+Obsoletes:	metacity-theme-Bluecurve
+Obsoletes:	gnome-theme-Bluecurve < 0.89
 
 %description -n gtk2-theme-engine-Bluecurve
 GTK+2 Bluecurve theme.
