@@ -25,7 +25,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 Bluecurve look & feel.
 
 %description -l pl
-Wygl±dy Bluecurve
+Wygl±dy Bluecurve.
 
 %package -n icons-Bluecurve
 Summary:	Bluecurve icons
@@ -33,10 +33,10 @@ Summary(pl):	Ikony Bluecurve
 Group:		Themes
 
 %description -n icons-Bluecurve
-Bluecurve icons for GNOME & KDE
+Bluecurve icons for GNOME & KDE.
 
 %description -n icons-Bluecurve -l pl
-Ikony Bluecurve dla GNOME i KDE
+Ikony Bluecurve dla GNOME i KDE.
 
 %package -n gnome-theme-Bluecurve
 Summary:	GNOME Bluecurve theme
@@ -47,10 +47,10 @@ Obsoletes:	metacity-theme-Bluecurve
 Requires:	icons-Bluecurve
 
 %description -n gnome-theme-Bluecurve
-GNOME Bluecurve theme (gtk, gtk2, metacity, nautilus)
+GNOME Bluecurve theme (gtk, gtk2, metacity, nautilus).
 
 %description -n gnome-theme-Bluecurve -l pl
-Bluecurve dla GNOME (gtk, gtk2, metacity, nautilus)
+Motyw Bluecurve dla GNOME (gtk, gtk2, metacity, nautilus).
 
 %package -n nautilus-theme-Bluecurve
 Summary:	Nautilus Bluecurve theme
@@ -59,10 +59,10 @@ Group:		Themes
 Requires:	nautilus
 
 %description -n nautilus-theme-Bluecurve
-Nautilus Bluecurve theme
+Nautilus Bluecurve theme.
 
 %description -n nautilus-theme-Bluecurve -l pl
-Bluecurve dla Nautilusa
+Motyw Bluecurve dla Nautilusa.
 
 %package -n xmms-skin-Bluecurve
 Summary:	XMMS skin taken from Bluecurve
@@ -83,10 +83,10 @@ Group:		Themes
 Requires:	qt >= 3.0
 
 %description -n qt-style-Bluecurve
-Bluecurve QT style
+Bluecurve QT style.
 
 %description -n qt-style-Bluecurve -l pl
-Styl Bluecyrve dla QT
+Styl Bluecyrve dla QT.
 
 %package -n kde-decoration-Bluecurve
 Summary:	Bluecurve KDE style
@@ -95,10 +95,10 @@ Group:		Themes
 Requires:	qt-style-Bluecurve
 
 %description -n kde-decoration-Bluecurve
-Bluecurve KDE style
+Bluecurve KDE style.
 
 %description -n kde-decoration-Bluecurve -l pl
-Styl Bluecurve dla KDE
+Styl Bluecurve dla KDE.
 
 %package -n XFree86-Xcursor-packs-Bluecurve
 Summary:	Bluecurve cursor pack
@@ -107,22 +107,22 @@ Group:		X11/XFree86
 Requires:	XFree86
 
 %description -n XFree86-Xcursor-packs-Bluecurve
-Bluecurve cursor pack
+Bluecurve cursor pack.
 
 %description -n XFree86-Xcursor-packs-Bluecurve
-Motyw kursorów Bluecurve
+Motyw kursorów Bluecurve.
 
 %package -n gdm-theme-Bluecurve
 Summary:	Bluecurve GDM theme
-Summary(pl):	Temat Bluecurve do GDM'a
+Summary(pl):	Motyw Bluecurve dla GDM-a.
 Group:		Themes
 Requires:	gdm >= 2.4
 
 %description -n gdm-theme-Bluecurve
-Bluecurve GDM theme
+Bluecurve GDM theme.
 
 %description -n gdm-theme-Bluecurve -l pl
-Temat Bluecurve do GDM'a
+Motyw Bluecurve dla GDM-a.
 
 %prep
 %setup -q
