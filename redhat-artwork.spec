@@ -1,4 +1,6 @@
 
+%bcond_without kde
+
 Summary:	Bluecurve look & feel
 Summary(pl):	Wygl±dy Bluecurve
 Name:		redhat-artwork
@@ -7,10 +9,9 @@ Release:	1
 Group:		Themes
 License:	GPL
 Source0:	http://www.kernel.pl/~djurban/pld/%{name}-%{version}.tar.bz2
-# Source0-md5:	16dce1391d6761cbaa3dda1ef13d82b0
+# Source0-md5:	f57880d4fb5a1faacbfda90307cc4ebb
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-am.patch
-##Patch1:		%{name}-kde.patch
 URL:		http://www.redhat.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
