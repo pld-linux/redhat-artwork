@@ -1,11 +1,12 @@
 Summary:	Bluecurve look & feel
 Summary(pl):	Wygl±dy Bluecurve
 Name:		redhat-artwork
-Version:	0.73
+Version:	0.78
 Release:	1
 Group:		Themes
 License:	GPL
-Source0:	%{name}-%{version}.tar.gz
+Source0:	ftp://distfiles.pld-linux.org/src/%{name}-%{version}.tar.gz
+# Source0-md5:	ad3507a52b3577fa04fab8bcabdccb6f
 Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.redhat.com
 BuildRequires:	pkgconfig
@@ -19,24 +20,22 @@ BuildRequires:	automake
 BuildRequires:	autoconf
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define         _icondir        /usr/share/icons
-
 %description
 Bluecurve look & feel.
 
 %description -l pl
 Wygl±dy Bluecurve
 
-%package -n icons-Bluecurve
-Summary:	Bluecurve icons
-Summary(pl):	Ikony Bluecurve
-Group:		Themes
+#%package -n icons-Bluecurve
+#Summary:	Bluecurve icons
+#Summary(pl):	Ikony Bluecurve
+#Group:		Themes
 
-%description -n icons-Bluecurve
-Bluecurve icons for GNOME & KDE
+#%description -n icons-Bluecurve
+#Bluecurve icons for GNOME & KDE
 
-%description -n icons-Bluecurve -l pl
-Ikony Bluecurve dla GNOME i KDE
+#%description -n icons-Bluecurve -l pl
+#Ikony Bluecurve dla GNOME i KDE
 
 %package -n gnome-theme-Bluecurve
 Summary:	GNOME Bluecurve theme
@@ -44,7 +43,7 @@ Summary(pl):	Bluecurve dla GNOME
 Group:		Themes
 Obsoletes:	gtk2-theme-engine-Wonderland
 Obsoletes:	metacity-theme-Bluecurve
-Requires:	icons-Bluecurve
+#Requires:	icons-Bluecurve
 
 %description -n gnome-theme-Bluecurve
 GNOME Bluecurve theme (gtk, gtk2, metacity, nautilus)
@@ -148,19 +147,19 @@ mv $RPM_BUILD_ROOT%{_libdir}/qt-3.1/plugins/styles/bluecurve.so $RPM_BUILD_ROOT%
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%files -n icons-Bluecurve
-%defattr(644,root,root,755)
-%{_icondir}/Bluecurve/16x16
-%{_icondir}/Bluecurve/22x22
-%{_icondir}/Bluecurve/24x24
-%{_icondir}/Bluecurve/32x32
-%{_icondir}/Bluecurve/48x48
-%{_icondir}/Bluecurve/64x64
-%{_icondir}/Bluecurve/72x72
-%{_icondir}/Bluecurve/96x96
-%{_icondir}/Bluecurve/192x192
-%{_icondir}/Bluecurve/index.theme
-%{_pixmapsdir}/*.png
+#%files -n icons-Bluecurve
+#%defattr(644,root,root,755)
+#%{_iconsdir}/Bluecurve/16x16
+#%{_iconsdir}/Bluecurve/22x22
+#%{_iconsdir}/Bluecurve/24x24
+#%{_iconsdir}/Bluecurve/32x32
+#%{_iconsdir}/Bluecurve/48x48
+#%{_iconsdir}/Bluecurve/64x64
+#%{_iconsdir}/Bluecurve/72x72
+#%{_iconsdir}/Bluecurve/96x96
+#%{_iconsdir}/Bluecurve/192x192
+#%{_iconsdir}/Bluecurve/index.theme
+#%{_pixmapsdir}/*.png
 
 %files -n gnome-theme-Bluecurve
 %defattr(644,root,root,755)
@@ -168,7 +167,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gtk-2.0/*/engines/libbluecurve.la
 %attr(755,root,root) %{_libdir}/gtk-2.0/*/engines/libbluecurve.so
 %{_datadir}/locale
-%{_datadir}/themes/Bluecurve
+%{_datadir}/themes
 
 %files -n nautilus-theme-Bluecurve
 %defattr(644,root,root,755)
@@ -190,9 +189,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n XFree86-Xcursor-packs-Bluecurve
 %defattr(644,root,root,755)
-%dir %{_icondir}/Bluecurve
-%{_icondir}/Bluecurve/cursors
-%{_icondir}/Bluecurve-inverse
+%dir %{_iconsdir}/Bluecurve
+%{_iconsdir}/Bluecurve/cursors
+%{_iconsdir}/Bluecurve-inverse
 
 %files -n gdm-theme-Bluecurve
 %defattr(644,root,root,755)
