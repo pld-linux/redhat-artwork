@@ -5,12 +5,12 @@
 Summary:	Bluecurve look & feel
 Summary(pl):	Wygl±dy Bluecurve
 Name:		redhat-artwork
-Version:	0.96
-Release:	7
+Version:	0.117
+Release:	1
 Group:		Themes
 License:	GPL
 Source0:	ftp://distfiles.pld-linux.org/src/%{name}-%{version}.tar.gz
-# Source0-md5:	c95eaf38879c43b2f1931d01c89285b3
+# Source0-md5:	91caaefd6629364c282181b34be13b57
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-am.patch
 Patch2:		%{name}-mouse_position.patch
