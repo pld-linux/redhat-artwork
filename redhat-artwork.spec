@@ -5,12 +5,12 @@
 Summary:	Bluecurve look & feel
 Summary(pl):	Wygl±dy Bluecurve
 Name:		redhat-artwork
-Version:	0.89
-Release:	2
+Version:	0.96
+Release:	1
 Group:		Themes
 License:	GPL
-Source0:	http://ep09.pld-linux.org/~djurban/pld/%{name}-%{version}.tar.bz2
-# Source0-md5:	f57880d4fb5a1faacbfda90307cc4ebb
+Source0:	http://ep09.pld-linux.org/~djurban/pld/%{name}-%{version}.tar.gz
+# Source0-md5:	c95eaf38879c43b2f1931d01c89285b3
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-am.patch
 Patch2:		%{name}-mouse_position.patch
@@ -41,7 +41,7 @@ Summary:	Bluecurve icons
 Summary(pl):	Ikony Bluecurve
 Group:		Themes
 # contains dir used by icons
-Requires:	XFree86-Xcursor-packs-Bluecurve
+Requires:	XcursorTheme-Bluecurve
 
 %description -n icons-Bluecurve
 Bluecurve icons for GNOME & KDE.
@@ -160,16 +160,16 @@ Bluecurve KDE theme.
 %description -n kde-theme-Bluecurve -l pl
 Motyw Bluecurve dla KDE.
 
-%package -n XFree86-Xcursor-packs-Bluecurve
+%package -n XcursorTheme-Bluecurve
 Summary:	Bluecurve cursor pack
 Summary(pl):	Motyw kursorów Bluecurve
 Group:		X11/XFree86
 Requires:	XFree86 
 
-%description -n XFree86-Xcursor-packs-Bluecurve
+%description -n XcursorTheme-Bluecurve
 Bluecurve cursor pack.
 
-%description -n XFree86-Xcursor-packs-Bluecurve -l pl
+%description -n XcursorTheme-Bluecurve -l pl
 Motyw kursorów Bluecurve.
 
 %package -n gdm-theme-Bluecurve
@@ -188,7 +188,7 @@ Motyw Bluecurve dla GDM-a.
 %setup -q
 %patch0 -p1
 %patch1 -p1 -b .niedakh
-%patch2 -p1
+#%patch2 -p1
 
 %build
 %if %{without kde}
@@ -287,7 +287,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/apps/kwin/bluecurve.desktop
 %endif
 
-%files -n XFree86-Xcursor-packs-Bluecurve
+%files -n XcursorTheme-Bluecurve
 %defattr(644,root,root,755)
 %dir %{_iconsdir}/Bluecurve
 %{_iconsdir}/Bluecurve/cursors
