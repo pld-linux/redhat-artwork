@@ -1,16 +1,6 @@
-diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/Makefile.am redhat-artwork-0.78/art/Makefile.am
---- /home/users/builder/1orig/redhat-artwork-0.78/art/Makefile.am	Wed Aug  6 11:07:57 2003
-+++ redhat-artwork-0.78/art/Makefile.am	Fri Aug 15 15:19:22 2003
-@@ -1,5 +1,5 @@
- ## icon must be built before gtk, or the gtkrc won't get the stock icons
--SUBDIRS=tools cursor nautilus xmms gdm icon gtk metacity kde qt
-+SUBDIRS=tools cursor nautilus xmms gdm gtk metacity kde qt
- 
- themedir = $(datadir)/themes/Bluecurve
- theme_DATA = index.theme
 diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/cursor/Bluecurve/Makefile.am redhat-artwork-0.78/art/cursor/Bluecurve/Makefile.am
 --- /home/users/builder/1orig/redhat-artwork-0.78/art/cursor/Bluecurve/Makefile.am	Mon Feb 24 08:13:11 2003
-+++ redhat-artwork-0.78/art/cursor/Bluecurve/Makefile.am	Fri Aug 15 15:04:57 2003
++++ redhat-artwork-0.78/art/cursor/Bluecurve/Makefile.am	Fri Aug 15 20:13:40 2003
 @@ -57,13 +57,13 @@
  	rm -rf Bluecurve
  
@@ -31,7 +21,7 @@ diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/cursor/Bluecurve/Mak
  
 diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/cursor/Bluecurve-inverse/Makefile.am redhat-artwork-0.78/art/cursor/Bluecurve-inverse/Makefile.am
 --- /home/users/builder/1orig/redhat-artwork-0.78/art/cursor/Bluecurve-inverse/Makefile.am	Mon Feb 24 08:13:17 2003
-+++ redhat-artwork-0.78/art/cursor/Bluecurve-inverse/Makefile.am	Fri Aug 15 15:05:36 2003
++++ redhat-artwork-0.78/art/cursor/Bluecurve-inverse/Makefile.am	Fri Aug 15 20:13:40 2003
 @@ -57,13 +57,13 @@
  	rm -rf Bluecurve-inverse
  
@@ -52,7 +42,18 @@ diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/cursor/Bluecurve-inv
  
 diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/icon/Makefile.am redhat-artwork-0.78/art/icon/Makefile.am
 --- /home/users/builder/1orig/redhat-artwork-0.78/art/icon/Makefile.am	Wed Aug  6 11:07:57 2003
-+++ redhat-artwork-0.78/art/icon/Makefile.am	Fri Aug 15 15:31:13 2003
++++ redhat-artwork-0.78/art/icon/Makefile.am	Fri Aug 15 20:54:38 2003
+@@ -72,8 +72,8 @@
+ 												\
+ 		 $(INSTALL_DATA) $(srcdir)/$$THEME/index.theme $(DESTDIR)$(THEME_DIR)/$$THEME;	\
+ 	done ;											\
+-	mkdir -p $(datadir)/pixmaps ;								\
+-	(cd $(datadir)/pixmaps ;								\
++	mkdir -p $(DESTDIR)$(datadir)/pixmaps ;								\
++	(cd $(DESTDIR)$(datadir)/pixmaps ;								\
+ 	 for icon in $(PIXMAPS_LINKS); do							\
+ 		ln -s ../icons/Bluecurve/48x48/apps/$$icon . ;					\
+ 	 done);
 @@ -110,5 +110,5 @@
  # 		(iconfiles=`find $(srcdir)/$$THEME -name "*.icon"`;			\
  # 		 for icon in $$iconfiles; do						\
@@ -62,7 +63,7 @@ diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/icon/Makefile.am red
  
 diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am
 --- /home/users/builder/1orig/redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am	Fri Sep 13 17:07:28 2002
-+++ redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am	Fri Aug 15 14:19:21 2003
++++ redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am	Fri Aug 15 20:13:40 2003
 @@ -4,7 +4,7 @@
  
  kwin_bluecurve_la_SOURCES = redhatclient.cpp
