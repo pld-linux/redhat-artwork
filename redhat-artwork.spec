@@ -6,7 +6,7 @@ Summary:	Bluecurve look & feel
 Summary(pl):	Wygl±dy Bluecurve
 Name:		redhat-artwork
 Version:	0.96
-Release:	1
+Release:	2
 Group:		Themes
 License:	GPL
 Source0:	ftp://distfiles.pld-linux.org/src/%{name}-%{version}.tar.gz
@@ -63,7 +63,7 @@ GTK+ Bluecurve theme.
 %description -n gtk-theme-engine-Bluecurve -l pl
 Motyw Bluecurve dla GTK.
 
-%package -n metacity-theme-Bluecurve-redhat
+%package -n metacity-themes-Bluecurve-redhat
 Summary:	Metacity Bluecurve theme
 Summary(pl):	Bluecurve dla Metacity
 Group:		Themes
@@ -72,12 +72,13 @@ Provides:	metacity-theme-Bluecurve
 Obsoletes:	gtk2-theme-engine-Wonderland
 Obsoletes:	metacity-theme-Bluecurve
 Obsoletes:	gnome-theme-Bluecurve < 0.89
+Obsoletes:	metacity-theme-Bluecurve-redhat
 Conflicts:	metacity-themes-Bluecurve
 
-%description -n metacity-theme-Bluecurve-redhat
+%description -n metacity-themes-Bluecurve-redhat
 GTK+ Bluecurve Metacity.
 
-%description -n metacity-theme-Bluecurve-redhat -l pl
+%description -n metacity-themes-Bluecurve-redhat -l pl
 Motyw Bluecurve dla Metacity.
 
 %package -n gnome-theme-Bluecurve
@@ -262,7 +263,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gtk/themes/engines/libbluecurve.so
 %{_datadir}/themes/Bluecurve*/gtk/
 
-%files -n metacity-theme-Bluecurve-redhat
+%files -n metacity-themes-Bluecurve-redhat
 %defattr(644,root,root,755)
 %{_datadir}/themes/Bluecurve*/metacity*/
 
