@@ -6,8 +6,7 @@ Release:	1
 Group:		Themes
 License:	GPL
 Source0:	%{name}-%{version}.tar.gz
-# Source0-md5:	124b27820d7e34e48b630d82f6a5a1f6
-Patch0:		%{name}-makefilefix.patch
+Patch0:		%{name}-DESTDIR.patch
 URL:		http://www.redhat.com
 BuildRequires:	pkgconfig
 BuildRequires:	gtk+-devel
@@ -34,10 +33,10 @@ Summary(pl):	Ikony Bluecurve
 Group:		Themes
 
 %description -n icons-Bluecurve
-Bluecurve icons
+Bluecurve icons for GNOME & KDE
 
 %description -n icons-Bluecurve -l pl
-Ikony Bluecurve
+Ikony Bluecurve dla GNOME i KDE
 
 %package -n gnome-theme-Bluecurve
 Summary:	GNOME Bluecurve theme
@@ -140,15 +139,10 @@ rm -f missing
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
-
-install -d $RPM_BUILD_ROOT%{_icondir}/Bluecurve/cursors
-install -d $RPM_BUILD_ROOT%{_icondir}/Bluecurve-inverse/cursors
-install art/cursor/Bluecurve/Bluecurve/* $RPM_BUILD_ROOT%{_icondir}/Bluecurve/cursors/
-install art/cursor/Bluecurve-inverse/Bluecurve-inverse/* $RPM_BUILD_ROOT%{_icondir}/Bluecurve-inverse/cursors/
-mv $RPM_BUILD_ROOT%{_pixmapsdir}/*.png $RPM_BUILD_ROOT%{_datadir}/icons/Bluecurve/48x48/apps/
-mv -f $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.so.0.0.0 $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.so
 install -d $RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/styles
+
+%{__make} install DESTDIR=$RPM_BUILD_ROOT
+mv -f $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.so.0.0.0 $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.so
 mv $RPM_BUILD_ROOT%{_libdir}/qt-3.1/plugins/styles/bluecurve.so $RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/styles/libbluecurve.so
 
 %clean
@@ -166,6 +160,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_icondir}/Bluecurve/96x96
 %{_icondir}/Bluecurve/192x192
 %{_icondir}/Bluecurve/index.theme
+%{_pixmapsdir}/*.png
 
 %files -n gnome-theme-Bluecurve
 %defattr(644,root,root,755)
