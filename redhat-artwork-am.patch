@@ -3,7 +3,7 @@
 @@ -1,6 +1,6 @@
  INCLUDES = $(all_includes) -I$(QTDIR)/include
  noinst_HEADERS = bluecurve.h
--styledir= $(libdir)/qt-3.2/plugins/styles
+-styledir= $(libdir)/qt-3.3/plugins/styles
 +styledir= $(libdir)/qt/plugins-mt/styles
  style_LTLIBRARIES = bluecurve.la
  bluecurve_la_LDFLAGS = -module -avoid-version -no-undefined $(all_libraries)
@@ -32,7 +32,7 @@
 --- redhat-artwork-0.89/art/qt/Makefile.am.orig	2003-12-11 15:35:17.091216696 +0100
 +++ redhat-artwork-0.89/art/qt/Makefile.am	2003-12-11 15:35:25.669912536 +0100
 @@ -1,5 +1,3 @@
--QTDIR = $(libdir)/qt-3.2
+-QTDIR = $(libdir)/qt-3.3
 -
  SUBDIRS = Bluecurve
  
