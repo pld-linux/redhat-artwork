@@ -6,7 +6,7 @@ Summary:	Bluecurve look & feel
 Summary(pl):	Wygl±dy Bluecurve
 Name:		redhat-artwork
 Version:	0.96
-Release:	2
+Release:	3
 Group:		Themes
 License:	GPL
 Source0:	ftp://distfiles.pld-linux.org/src/%{name}-%{version}.tar.gz
@@ -68,7 +68,6 @@ Summary:	Metacity Bluecurve theme
 Summary(pl):	Bluecurve dla Metacity
 Group:		Themes
 Requires:	icons-Bluecurve
-Provides:	metacity-theme-Bluecurve
 Obsoletes:	gtk2-theme-engine-Wonderland
 Obsoletes:	metacity-theme-Bluecurve
 Obsoletes:	gnome-theme-Bluecurve < 0.89
