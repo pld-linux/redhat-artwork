@@ -94,10 +94,10 @@ Obsoletes:	gtk2-theme-engine-Wonderland
 Obsoletes:	metacity-theme-Bluecurve
 
 %description -n gnome-theme-Bluecurve
-GNOME Bluecurve theme (gtk, gtk2, metacity).
+GNOME Bluecurve theme (gtk, gtk2, metacity, nautilus).
 
 %description -n gnome-theme-Bluecurve -l pl
-Motyw Bluecurve dla GNOME (gtk, gtk2, metacity).
+Motyw Bluecurve dla GNOME (gtk, gtk2, metacity, nautilus).
 
 %package -n gtk2-theme-engine-Bluecurve
 Summary:	GTK+2 Bluecurve theme
