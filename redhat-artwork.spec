@@ -138,16 +138,16 @@ XMMS skin taken from Bluecurve.
 Skórka dla XMMS-a w stylu Bluecurve.
 
 %package -n qt-style-Bluecurve
-Summary:	Bluecurve QT style
-Summary(pl):	Styl Bluecurve dla QT
+Summary:	Bluecurve Qt style
+Summary(pl):	Styl Bluecurve dla Qt
 Group:		Themes
 Requires:	qt >= 3.0
 
 %description -n qt-style-Bluecurve
-Bluecurve QT style.
+Bluecurve Qt style.
 
 %description -n qt-style-Bluecurve -l pl
-Styl Bluecurve dla QT.
+Styl Bluecurve dla Qt.
 
 %package -n kde-theme-Bluecurve
 Summary:	Bluecurve KDE theme
