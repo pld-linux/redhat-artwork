@@ -53,7 +53,6 @@ Summary(pl):	Bluecurve dla GTK+
 Group:		Themes
 Requires:	icons-Bluecurve
 Obsoletes:	gtk2-theme-engine-Wonderland
-Obsoletes:	metacity-theme-Bluecurve
 Obsoletes: 	gnome-theme-Bluecurve < 0.89
 
 %description -n gtk-theme-engine-Bluecurve
@@ -62,19 +61,20 @@ GTK+ Bluecurve theme.
 %description -n gtk-theme-engine-Bluecurve -l pl
 Motyw Bluecurve dla GTK.
 
-%package -n metacity-theme-Bluecurve
+%package -n metacity-theme-Bluecurve-redhat
 Summary:        Metacity Bluecurve theme
 Summary(pl):    Bluecurve dla Metacity
 Group:          Themes
 Requires:       icons-Bluecurve
+Provides:	metacity-theme-Bluecurve
 Obsoletes:      gtk2-theme-engine-Wonderland
 Obsoletes:      metacity-theme-Bluecurve
 Obsoletes:      gnome-theme-Bluecurve < 0.89
 
-%description -n metacity-theme-Bluecurve
+%description -n metacity-theme-Bluecurve-redhat
 GTK+ Bluecurve Metacity.
 
-%description -n metacity-theme-Bluecurve -l pl
+%description -n metacity-theme-Bluecurve-redhat -l pl
 Motyw Bluecurve dla Metacity.
 
 
@@ -260,7 +260,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gtk/themes/engines/libbluecurve.so
 %{_datadir}/themes/Bluecurve*/gtk/
 
-%files -n metacity-theme-Bluecurve
+%files -n metacity-theme-Bluecurve-redhat
 %defattr(644,root,root,755)
 %{_datadir}/themes/Bluecurve*/metacity*/
 
