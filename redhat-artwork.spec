@@ -8,6 +8,7 @@ License:	GPL
 Source0:	ftp://distfiles.pld-linux.org/src/%{name}-%{version}.tar.gz
 # Source0-md5:	ad3507a52b3577fa04fab8bcabdccb6f
 Patch0:		%{name}-DESTDIR.patch
+Patch1:		%{name}-gdm.patch
 URL:		http://www.redhat.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -18,6 +19,7 @@ BuildRequires:	icon-slicer
 BuildRequires:	kdebase-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
+BuildRequires:	zip
 BuildRequires:	qt-devel >= 3.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -127,6 +129,7 @@ Motyw Bluecurve dla GDM-a.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 
 %build
 rm -f missing
@@ -145,6 +148,8 @@ install -d $RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/styles
 	DESTDIR=$RPM_BUILD_ROOT
 
 mv -f $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.so.0.0.0 $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.so
+sed -e "s,\.0,," $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.la > $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bl.la
+mv $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bl.la $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.la
 mv $RPM_BUILD_ROOT%{_libdir}/qt-3.1/plugins/styles/bluecurve.so $RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/styles/libbluecurve.so
 
 rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/*/engines/libbluecurve.la
@@ -186,7 +191,6 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kwin_bluecurve.so
 %{_libdir}/kde3/kwin_bluecurve.la
-# TODO: fix
 %{_datadir}/apps
 
 %files -n XFree86-Xcursor-packs-Bluecurve
@@ -197,5 +201,4 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n gdm-theme-Bluecurve
 %defattr(644,root,root,755)
-# TODO: fix
 %{_datadir}/gdm
