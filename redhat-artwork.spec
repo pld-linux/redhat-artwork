@@ -89,6 +89,7 @@ Requires:	icons-Bluecurve
 Requires:	metacity-themes-Bluecurve-redhat
 Requires:	gtk2-theme-engine-Bluecurve
 Requires:	gtk-theme-engine-Bluecurve
+Requires:	nautilus-theme-Bluecurve
 Obsoletes:	gtk2-theme-engine-Wonderland
 Obsoletes:	metacity-theme-Bluecurve
 
