@@ -18,6 +18,7 @@ BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	libtool
 BuildRequires:	automake
 BuildRequires:	autoconf
+BuildRequires:	icon-slicer
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -26,16 +27,16 @@ Bluecurve look & feel.
 %description -l pl
 Wygl±dy Bluecurve
 
-#%package -n icons-Bluecurve
-#Summary:	Bluecurve icons
-#Summary(pl):	Ikony Bluecurve
-#Group:		Themes
+%package -n icons-Bluecurve
+Summary:	Bluecurve icons
+Summary(pl):	Ikony Bluecurve
+Group:		Themes
 
-#%description -n icons-Bluecurve
-#Bluecurve icons for GNOME & KDE
+%description -n icons-Bluecurve
+Bluecurve icons for GNOME & KDE
 
-#%description -n icons-Bluecurve -l pl
-#Ikony Bluecurve dla GNOME i KDE
+%description -n icons-Bluecurve -l pl
+Ikony Bluecurve dla GNOME i KDE
 
 %package -n gnome-theme-Bluecurve
 Summary:	GNOME Bluecurve theme
@@ -43,7 +44,7 @@ Summary(pl):	Bluecurve dla GNOME
 Group:		Themes
 Obsoletes:	gtk2-theme-engine-Wonderland
 Obsoletes:	metacity-theme-Bluecurve
-#Requires:	icons-Bluecurve
+Requires:	icons-Bluecurve
 
 %description -n gnome-theme-Bluecurve
 GNOME Bluecurve theme (gtk, gtk2, metacity, nautilus)
@@ -147,19 +148,15 @@ mv $RPM_BUILD_ROOT%{_libdir}/qt-3.1/plugins/styles/bluecurve.so $RPM_BUILD_ROOT%
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-#%files -n icons-Bluecurve
-#%defattr(644,root,root,755)
-#%{_iconsdir}/Bluecurve/16x16
-#%{_iconsdir}/Bluecurve/22x22
-#%{_iconsdir}/Bluecurve/24x24
-#%{_iconsdir}/Bluecurve/32x32
-#%{_iconsdir}/Bluecurve/48x48
-#%{_iconsdir}/Bluecurve/64x64
-#%{_iconsdir}/Bluecurve/72x72
-#%{_iconsdir}/Bluecurve/96x96
-#%{_iconsdir}/Bluecurve/192x192
-#%{_iconsdir}/Bluecurve/index.theme
-#%{_pixmapsdir}/*.png
+%files -n icons-Bluecurve
+%defattr(644,root,root,755)
+%{_iconsdir}/Bluecurve/16x16
+%{_iconsdir}/Bluecurve/24x24
+%{_iconsdir}/Bluecurve/36x36
+%{_iconsdir}/Bluecurve/48x48
+%{_iconsdir}/Bluecurve/96x96
+%{_iconsdir}/Bluecurve/index.theme
+%{_pixmapsdir}/*.png
 
 %files -n gnome-theme-Bluecurve
 %defattr(644,root,root,755)
