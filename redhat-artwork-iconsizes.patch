@@ -1,0 +1,8 @@
+--- redhat-artwork-0.78/art/gtk/Bluecurve/gtk-2.0/gtkrc.orig	2003-09-06 01:49:49.000000000 +0200
++++ redhat-artwork-0.78/art/gtk/Bluecurve/gtk-2.0/gtkrc	2003-09-06 01:50:08.000000000 +0200
+@@ -1,4 +1,4 @@
+-gtk-icon-sizes = "panel-menu=36,36"
++gtk-icon-sizes = "panel-menu=24,24"
+ 
+ include "iconrc"
+ 
