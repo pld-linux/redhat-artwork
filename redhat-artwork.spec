@@ -165,7 +165,7 @@ Summary:	Bluecurve cursor pack
 Summary(pl):	Motyw kursorów Bluecurve
 Group:		X11/XFree86
 Requires:	XFree86 
-Obsoletes:	XFree86-Xcursor-pack-Bluecurve
+Obsoletes:	XFree86-Xcursor-packs-Bluecurve
 
 %description -n XcursorTheme-Bluecurve
 Bluecurve cursor pack.
