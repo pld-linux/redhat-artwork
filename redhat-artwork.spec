@@ -8,7 +8,7 @@ Version:	0.89
 Release:	1
 Group:		Themes
 License:	GPL
-Source0:	http://www.kernel.pl/~djurban/pld/%{name}-%{version}.tar.bz2
+Source0:	http://ep09.pld-linux.org/~djurban/pld/%{name}-%{version}.tar.bz2
 # Source0-md5:	f57880d4fb5a1faacbfda90307cc4ebb
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-am.patch
