@@ -6,7 +6,7 @@ Summary:	Bluecurve look & feel
 Summary(pl):	Wygl±dy Bluecurve
 Name:		redhat-artwork
 Version:	0.96
-Release:	6
+Release:	7
 Group:		Themes
 License:	GPL
 Source0:	ftp://distfiles.pld-linux.org/src/%{name}-%{version}.tar.gz
@@ -239,7 +239,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n icons-Bluecurve
 %defattr(644,root,root,755)
-%dir %{_iconsdir}/Bluecurve*
+%dir %{_datadir}/themes/Bluecurve*
 %{_iconsdir}/Bluecurve/16x16
 %{_iconsdir}/Bluecurve/20x20
 %{_iconsdir}/Bluecurve/24x24
