@@ -9,7 +9,7 @@ Version:	0.96
 Release:	1
 Group:		Themes
 License:	GPL
-Source0:	http://ep09.pld-linux.org/~djurban/pld/%{name}-%{version}.tar.gz
+Source0:	ftp://distfiles.pld-linux.org/src/%{name}-%{version}.tar.gz
 # Source0-md5:	c95eaf38879c43b2f1931d01c89285b3
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-am.patch
