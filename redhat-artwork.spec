@@ -1,16 +1,15 @@
 Summary:	Bluecurve look & feel
 Summary(pl):	Wygl±dy Bluecurve
 Name:		redhat-artwork
-Version:	0.78
-Release:	3
+Version:	0.81
+Release:	1
 Group:		Themes
 License:	GPL
 Source0:	ftp://distfiles.pld-linux.org/src/%{name}-%{version}.tar.gz
-# Source0-md5:	ad3507a52b3577fa04fab8bcabdccb6f
+# Source0-md5:	1ec3feb4d0c3f7f51351b91cf1ca9ded
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-gdm.patch
 Patch2:		%{name}-kde.patch
-Patch3:		%{name}-iconsizes.patch
 URL:		http://www.redhat.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -134,8 +133,7 @@ Motyw Bluecurve dla GDM-a.
 %setup -q
 %patch0 -p1
 %patch1 -p1
-%patch2 -p1
-%patch3 -p1
+#%patch2 -p1
 
 %build
 %{__libtoolize}
