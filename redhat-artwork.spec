@@ -10,6 +10,7 @@ Source0:	ftp://distfiles.pld-linux.org/src/%{name}-%{version}.tar.gz
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-gdm.patch
 Patch2:		%{name}-kde.patch
+Patch3:		%{name}-iconsizes.patch
 URL:		http://www.redhat.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -17,7 +18,7 @@ BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	gtk+2-devel
 BuildRequires:	icon-slicer
-BuildRequires:	kdebase-devel
+BuildRequires:	kdebase-devel >= 3.0.0
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	qt-devel >= 3.0
@@ -134,13 +135,15 @@ Motyw Bluecurve dla GDM-a.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 %build
 %{__libtoolize}
 %{__aclocal}
 %{__automake}
 %{__autoconf}
-%configure
+%configure \
+	--with-xinerama
 %{__make}
 
 %install
