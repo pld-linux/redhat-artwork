@@ -8,17 +8,17 @@ License:	GPL
 Source0:	ftp://distfiles.pld-linux.org/src/%{name}-%{version}.tar.gz
 # Source0-md5:	ad3507a52b3577fa04fab8bcabdccb6f
 Patch0:		%{name}-DESTDIR.patch
-URL:		http://www.redhat.com
-BuildRequires:	pkgconfig
+URL:		http://www.redhat.com/
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	gdk-pixbuf-devel
 BuildRequires:	gtk+-devel
 BuildRequires:	gtk+2-devel
-BuildRequires:	qt-devel >= 3.0
-BuildRequires:	kdebase-devel
-BuildRequires:	gdk-pixbuf-devel
-BuildRequires:	libtool
-BuildRequires:	automake
-BuildRequires:	autoconf
 BuildRequires:	icon-slicer
+BuildRequires:	kdebase-devel
+BuildRequires:	libtool
+BuildRequires:	pkgconfig
+BuildRequires:	qt-devel >= 3.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -42,9 +42,9 @@ Ikony Bluecurve dla GNOME i KDE.
 Summary:	GNOME Bluecurve theme
 Summary(pl):	Bluecurve dla GNOME
 Group:		Themes
+Requires:	icons-Bluecurve
 Obsoletes:	gtk2-theme-engine-Wonderland
 Obsoletes:	metacity-theme-Bluecurve
-Requires:	icons-Bluecurve
 
 %description -n gnome-theme-Bluecurve
 GNOME Bluecurve theme (gtk, gtk2, metacity, nautilus).
@@ -66,15 +66,15 @@ Motyw Bluecurve dla Nautilusa.
 
 %package -n xmms-skin-Bluecurve
 Summary:	XMMS skin taken from Bluecurve
-Summary(pl):	Skórka dla XMMS'a w stylu Bluecurve
+Summary(pl):	Skórka dla XMMS-a w stylu Bluecurve
 Group:		X11/Applications/Multimedia
 Requires:	xmms
 
 %description -n xmms-skin-Bluecurve
-XMMS skin taken from Bluecurve
+XMMS skin taken from Bluecurve.
 
 %description -n xmms-skin-Bluecurve -l pl
-Skórka dla XMMS'a w stylu Bluecurve
+Skórka dla XMMS-a w stylu Bluecurve.
 
 %package -n qt-style-Bluecurve
 Summary:	Bluecurve QT style
@@ -86,7 +86,7 @@ Requires:	qt >= 3.0
 Bluecurve QT style.
 
 %description -n qt-style-Bluecurve -l pl
-Styl Bluecyrve dla QT.
+Styl Bluecurve dla QT.
 
 %package -n kde-decoration-Bluecurve
 Summary:	Bluecurve KDE style
@@ -109,12 +109,12 @@ Requires:	XFree86
 %description -n XFree86-Xcursor-packs-Bluecurve
 Bluecurve cursor pack.
 
-%description -n XFree86-Xcursor-packs-Bluecurve
+%description -n XFree86-Xcursor-packs-Bluecurve -l pl
 Motyw kursorów Bluecurve.
 
 %package -n gdm-theme-Bluecurve
 Summary:	Bluecurve GDM theme
-Summary(pl):	Motyw Bluecurve dla GDM-a.
+Summary(pl):	Motyw Bluecurve dla GDM-a
 Group:		Themes
 Requires:	gdm >= 2.4
 
@@ -141,9 +141,13 @@ rm -f missing
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/styles
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT
+
 mv -f $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.so.0.0.0 $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.so
 mv $RPM_BUILD_ROOT%{_libdir}/qt-3.1/plugins/styles/bluecurve.so $RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/styles/libbluecurve.so
+
+rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/*/engines/libbluecurve.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -161,8 +165,8 @@ rm -rf $RPM_BUILD_ROOT
 %files -n gnome-theme-Bluecurve
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/gtk/themes/engines/libbluecurve.so
-%{_libdir}/gtk-2.0/*/engines/libbluecurve.la
 %attr(755,root,root) %{_libdir}/gtk-2.0/*/engines/libbluecurve.so
+# TODO: fix (too many dirs)
 %{_datadir}/locale
 %{_datadir}/themes
 
@@ -180,8 +184,9 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n kde-decoration-Bluecurve
 %defattr(644,root,root,755)
-%{_libdir}/kde3/kwin_bluecurve.la
 %attr(755,root,root) %{_libdir}/kde3/kwin_bluecurve.so
+%{_libdir}/kde3/kwin_bluecurve.la
+# TODO: fix
 %{_datadir}/apps
 
 %files -n XFree86-Xcursor-packs-Bluecurve
@@ -192,4 +197,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n gdm-theme-Bluecurve
 %defattr(644,root,root,755)
+# TODO: fix
 %{_datadir}/gdm
