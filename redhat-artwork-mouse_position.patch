@@ -1,0 +1,40 @@
+--- redhat-artwork-0.89/art/kde/kwin/Bluecurve/bluecurveclient.h.orig	2003-12-10 17:34:47.000000000 +0100
++++ redhat-artwork-0.89/art/kde/kwin/Bluecurve/bluecurveclient.h	2004-03-27 18:58:18.988560168 +0100
+@@ -121,7 +121,7 @@
+ 		virtual void iconChange();
+ 		virtual void desktopChange();
+ 		virtual QSize minimumSize() const;
+-		virtual MousePosition mousePosition(const QPoint &point) const;
++		virtual KDecoration::Position mousePosition(const QPoint &point) const;
+ 
+ 	protected slots:
+ 		void slotMaximize();
+--- redhat-artwork-0.89/art/kde/kwin/Bluecurve/bluecurveclient.cpp.orig	2003-12-10 17:34:47.000000000 +0100
++++ redhat-artwork-0.89/art/kde/kwin/Bluecurve/bluecurveclient.cpp	2004-03-27 19:01:51.270288440 +0100
+@@ -1324,9 +1324,9 @@
+ }
+ 
+ 
+-KDecoration::MousePosition BlueCurveClient::mousePosition( const QPoint& p ) const
++KDecoration::Position BlueCurveClient::mousePosition( const QPoint& p ) const
+ {
+-	MousePosition m = Nowhere;
++	KDecoration::Position m;
+ 
+ 	// Modify the mouse position if we are using a grab bar.
+ 	if (showGrabBar && (!isTool()) )
+@@ -1335,11 +1335,11 @@
+ 		else
+ 		{
+ 			if (p.x() >= (width() - 20))
+-				m = BottomRight2;
++				m = PositionBottomRight;
+ 			else if (p.x() <= 20)
+-				m = BottomLeft2;
++				m = PositionBottomLeft;
+ 			else
+-				m = KDecorationDefines::Bottom;
++				m = PositionBottom;
+ 		}
+ 	else
+ 		m = KDecoration::mousePosition(p);
