@@ -1,0 +1,39 @@
+--- redhat-artwork-0.89/art/qt/Bluecurve/Makefile.am.orig	2003-12-11 14:44:00.844877224 +0100
++++ redhat-artwork-0.89/art/qt/Bluecurve/Makefile.am	2003-12-11 14:45:24.135215168 +0100
+@@ -1,6 +1,6 @@
+ INCLUDES = $(all_includes) -I$(QTDIR)/include
+ noinst_HEADERS = bluecurve.h
+-styledir= $(libdir)/qt-3.2/plugins/styles
++styledir= $(libdir)/qt/plugins-mt/styles
+ style_LTLIBRARIES = bluecurve.la
+ bluecurve_la_LDFLAGS = -module -avoid-version -no-undefined $(all_libraries)
+ bluecurve_la_LIBADD =  -L$(QTDIR)/lib -lqt-mt
+--- redhat-artwork-0.89/art/kde/kwin/Bluecurve/Makefile.am.niedakh	2003-12-11 15:09:23.205443240 +0100
++++ redhat-artwork-0.89/art/kde/kwin/Bluecurve/Makefile.am	2003-12-11 15:23:07.747093856 +0100
+@@ -12,11 +12,16 @@
+ noinst_HEADERS =  bluecurveclient.h bitmaps.h
+ 
+ kde_module_LTLIBRARIES = kwin3_bluecurve.la
+-kwin3_bluecurve_la_SOURCES = bluecurveclient.cpp
++kwin3_bluecurve_la_SOURCES = bluecurveclient.cpp bluecurveclient.moc
+ kwin3_bluecurve_la_LIBADD = $(kde_libraries)/libkdecorations.la
+-kwin3_bluecurve_la_LDFLAGS = $(all_libraries) -lkdecore -module
++kwin3_bluecurve_la_LDFLAGS = $(all_libraries) -lkdecore -module -avoid-version
+ kwin3_bluecurve_la_METASOURCES = AUTO
+ 
++bluecurve.moc: bluecurveclient.h
++	                $(QTDIR)/bin/moc -o bluecurveclient.moc bluecurveclient.h
++
++$(kwin3_bluecurve_la_OBJECTS): bluecurve.moc	
++
+ DISTCLEANFILES = $(kwin3_bluecurve_la_METASOURCES)
+ 
+ EXTRA_DIST=bluecurveclient.moc bluecurve.desktop
+--- redhat-artwork-0.89/art/qt/Makefile.am.orig	2003-12-11 15:35:17.091216696 +0100
++++ redhat-artwork-0.89/art/qt/Makefile.am	2003-12-11 15:35:25.669912536 +0100
+@@ -1,5 +1,3 @@
+-QTDIR = $(libdir)/qt-3.2
+-
+ SUBDIRS = Bluecurve
+ 
+ settingsdir = $(QTDIR)/etc/settings

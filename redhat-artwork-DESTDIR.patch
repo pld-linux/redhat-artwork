@@ -40,36 +40,59 @@ diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/cursor/Bluecurve-inv
            fi ;												\
  	done
  
-diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/icon/Makefile.am redhat-artwork-0.78/art/icon/Makefile.am
---- /home/users/builder/1orig/redhat-artwork-0.78/art/icon/Makefile.am	Wed Aug  6 11:07:57 2003
-+++ redhat-artwork-0.78/art/icon/Makefile.am	Fri Aug 15 20:54:38 2003
-@@ -72,8 +72,8 @@
- 												\
- 		 $(INSTALL_DATA) $(srcdir)/$$THEME/index.theme $(DESTDIR)$(THEME_DIR)/$$THEME;	\
- 	done ;											\
--	mkdir -p $(datadir)/pixmaps ;								\
--	(cd $(datadir)/pixmaps ;								\
-+	mkdir -p $(DESTDIR)$(datadir)/pixmaps ;								\
-+	(cd $(DESTDIR)$(datadir)/pixmaps ;								\
- 	 for icon in $(PIXMAPS_LINKS); do							\
- 		ln -s ../icons/Bluecurve/48x48/apps/$$icon . ;					\
+--- redhat-artwork-0.89/art/icon/Makefile.am.orig	2003-10-28 18:31:33.000000000 +0100
++++ redhat-artwork-0.89/art/icon/Makefile.am	2003-12-11 11:57:36.497728704 +0100
+@@ -1,6 +1,6 @@
+ SUBDIRS = Bluecurve
+ 
+-THEME_DIR=$(datadir)/icons
++THEME_DIR=$(DESTDIR)$(datadir)/icons
+ 
+ PIXMAPS_LINKS=					\
+ 	redhat-accessories.png			\
+@@ -28,7 +28,7 @@
+ 	switchdesk.png
+ 
+ install-data-local:
+-	(cd $(datadir)/pixmaps ;					\
++	(cd $(DESTDIR)$(datadir)/pixmaps ;				\
+ 	 for icon in $(PIXMAPS_LINKS); do				\
+ 		ln -sf ../icons/Bluecurve/48x48/apps/$$icon . ;		\
  	 done);
-@@ -110,5 +110,5 @@
- # 		(iconfiles=`find $(srcdir)/$$THEME -name "*.icon"`;			\
- # 		 for icon in $$iconfiles; do						\
- # 			cp -f $$icon $(distdir)/$$icon || exit 1;			\
--# 		 done);									\
-+# 		 done);
+--- redhat-artwork-0.89/art/kde/kwin/Bluecurve/Makefile.am.orig	2003-12-10 23:39:01.000000000 +0100
++++ redhat-artwork-0.89/art/kde/kwin/Bluecurve/Makefile.am	2003-12-11 12:20:17.220867344 +0100
+@@ -14,7 +14,7 @@
+ kde_module_LTLIBRARIES = kwin3_bluecurve.la
+ kwin3_bluecurve_la_SOURCES = bluecurveclient.cpp
+ kwin3_bluecurve_la_LIBADD = $(kde_libraries)/libkdecorations.la
+-kwin3_bluecurve_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -lkdecore -module
++kwin3_bluecurve_la_LDFLAGS = $(all_libraries) -lkdecore -module
+ kwin3_bluecurve_la_METASOURCES = AUTO
  
-diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am
---- /home/users/builder/1orig/redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am	Fri Sep 13 17:07:28 2002
-+++ redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am	Fri Aug 15 20:13:40 2003
-@@ -4,7 +4,7 @@
+ DISTCLEANFILES = $(kwin3_bluecurve_la_METASOURCES)
+--- redhat-artwork-0.89/art/icon/Bluecurve/sheets/Makefile.am~	2003-10-28 23:41:28.000000000 +0100
++++ redhat-artwork-0.89/art/icon/Bluecurve/sheets/Makefile.am	2003-12-11 16:03:09.050040320 +0100
+@@ -58,19 +58,19 @@
+ install-data-local: $(THEME).stamp
+ 	dirs=`find $(THEME) -type d -print` ;		\
+ 	for d in $$dirs ; do				\
+-	  mkdir -p $(datadir)/icons/$$d ;		\
++	  mkdir -p $(DESTDIR)$(datadir)/icons/$$d ;		\
+         done;						\
+ 	files=`find $(THEME) -type f -print` ;		\
+ 	for f in $$files ; do				\
+-	  install -m 0644 $$f $(datadir)/icons/$$f ;	\
++	  install -m 0644 $$f $(DESTDIR)$(datadir)/icons/$$f ;	\
+         done;						\
+ 	links=`find $(THEME) -type l -print` ;		\
+ 	for l in $$links ; do				\
+-	  cp -d $$l $(datadir)/icons/$$l ;		\
++	  cp -d $$l $(DESTDIR)$(datadir)/icons/$$l ;		\
+         done
  
- kwin_bluecurve_la_SOURCES = redhatclient.cpp
- kwin_bluecurve_la_LIBADD = $(kde_libraries)/kwin.la
--kwin_bluecurve_la_LDFLAGS = $(all_libraries) $(KDE_PLUGIN) -module
-+kwin_bluecurve_la_LDFLAGS = $(all_libraries) -module
+ uninstall:
+-	rm -rf $(datadir)/icons/$(THEME)
++	rm -rf $(DESTDIR)$(datadir)/icons/$(THEME)
  
- themedir = $(datadir)/apps/kwin
- theme_DATA = bluecurve.desktop
+ clean-local:
+ 	rm -rf $(THEME) $(THEME).stamp
