@@ -1,0 +1,28 @@
+diff -urN redhat-artwork.orig/art/gdm/Bluecurve/Bluecurve.xml redhat-artwork-0.78/art/gdm/Bluecurve/Bluecurve.xml
+--- redhat-artwork.orig/art/gdm/Bluecurve/Bluecurve.xml	2003-08-08 15:34:57.000000000 +0200
++++ redhat-artwork-0.78/art/gdm/Bluecurve/Bluecurve.xml	2003-09-01 18:50:48.433885184 +0200
+@@ -355,10 +355,6 @@
+           </item>
+         </fixed>
+   </item>
+-  <item type="pixmap">
+-    <normal file="rh_logo-header.png"/>
+-    <pos x="3%" y="5%" width="398" height="128" anchor="nw"/>
+-  </item>
+   <item type="label" id="clock">
+     <normal color="#909090" font="Sans Bold 18"/>
+ 		<pos x="-20" y="-16" anchor="se"/>
+diff -urN redhat-artwork.orig/art/gdm/Bluecurve/Bluecurve.xml.in redhat-artwork-0.78/art/gdm/Bluecurve/Bluecurve.xml.in
+--- redhat-artwork.orig/art/gdm/Bluecurve/Bluecurve.xml.in	2003-07-07 14:56:25.000000000 +0200
++++ redhat-artwork-0.78/art/gdm/Bluecurve/Bluecurve.xml.in	2003-09-01 18:50:54.676936096 +0200
+@@ -145,10 +145,6 @@
+           </item>
+         </fixed>
+   </item>
+-  <item type="pixmap">
+-    <normal file="rh_logo-header.png"/>
+-    <pos x="3%" y="5%" width="398" height="128" anchor="nw"/>
+-  </item>
+   <item type="label" id="clock">
+     <normal color="#909090" font="Sans Bold 18"/>
+ 		<pos x="-20" y="-16" anchor="se"/>
