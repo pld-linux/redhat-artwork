@@ -19,8 +19,8 @@ BuildRequires:	icon-slicer
 BuildRequires:	kdebase-devel
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	zip
 BuildRequires:	qt-devel >= 3.0
+BuildRequires:	zip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -33,6 +33,8 @@ Wygl±dy Bluecurve.
 Summary:	Bluecurve icons
 Summary(pl):	Ikony Bluecurve
 Group:		Themes
+# contains dir used by icons
+Requires:	XFree86-Xcursor-packs-Bluecurve
 
 %description -n icons-Bluecurve
 Bluecurve icons for GNOME & KDE.
@@ -49,10 +51,10 @@ Obsoletes:	gtk2-theme-engine-Wonderland
 Obsoletes:	metacity-theme-Bluecurve
 
 %description -n gnome-theme-Bluecurve
-GNOME Bluecurve theme (gtk, gtk2, metacity, nautilus).
+GNOME Bluecurve theme (gtk, gtk2, metacity).
 
 %description -n gnome-theme-Bluecurve -l pl
-Motyw Bluecurve dla GNOME (gtk, gtk2, metacity, nautilus).
+Motyw Bluecurve dla GNOME (gtk, gtk2, metacity).
 
 %package -n nautilus-theme-Bluecurve
 Summary:	Nautilus Bluecurve theme
@@ -132,7 +134,6 @@ Motyw Bluecurve dla GDM-a.
 %patch1 -p1
 
 %build
-rm -f missing
 %{__libtoolize}
 %{__aclocal}
 %{__automake}
@@ -149,10 +150,15 @@ install -d $RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/styles
 
 mv -f $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.so.0.0.0 $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.so
 sed -e "s,\.0,," $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.la > $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bl.la
-mv $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bl.la $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.la
-mv $RPM_BUILD_ROOT%{_libdir}/qt-3.1/plugins/styles/bluecurve.so $RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/styles/libbluecurve.so
+mv -f $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bl.la $RPM_BUILD_ROOT%{_libdir}/kde3/kwin_bluecurve.la
+mv -f $RPM_BUILD_ROOT%{_libdir}/qt-3.1/plugins/styles/bluecurve.so \
+	$RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/styles/libbluecurve.so
 
-rm -f $RPM_BUILD_ROOT%{_libdir}/gtk-2.0/*/engines/libbluecurve.la
+rm -f $RPM_BUILD_ROOT%{_libdir}/gtk*/*/engines/libbluecurve.la \
+	$RPM_BUILD_ROOT%{_libdir}/qt-*/plugins/styles/bluecurve.la
+
+# locales for gdm theme
+%find_lang %{name}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -169,11 +175,11 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n gnome-theme-Bluecurve
 %defattr(644,root,root,755)
+# TODO: gtk 1.x should be separate (don't want dependency on both gtk versions!)
 %attr(755,root,root) %{_libdir}/gtk/themes/engines/libbluecurve.so
 %attr(755,root,root) %{_libdir}/gtk-2.0/*/engines/libbluecurve.so
-# TODO: fix (too many dirs)
-%{_datadir}/locale
-%{_datadir}/themes
+# note: each dir contains gtkrc for gtk 1.x and 2.x
+%{_datadir}/themes/Bluecurve*
 
 %files -n nautilus-theme-Bluecurve
 %defattr(644,root,root,755)
@@ -191,7 +197,9 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/kde3/kwin_bluecurve.so
 %{_libdir}/kde3/kwin_bluecurve.la
-%{_datadir}/apps
+%{_datadir}/apps/kdisplay/color-schemes/Bluecurve.kcsrc
+%{_datadir}/apps/kstyle/themes/Bluecurve.themerc
+%{_datadir}/apps/kwin/bluecurve.desktop
 
 %files -n XFree86-Xcursor-packs-Bluecurve
 %defattr(644,root,root,755)
@@ -199,6 +207,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_iconsdir}/Bluecurve/cursors
 %{_iconsdir}/Bluecurve-inverse
 
-%files -n gdm-theme-Bluecurve
+%files -n gdm-theme-Bluecurve -f %{name}.lang
 %defattr(644,root,root,755)
-%{_datadir}/gdm
+%{_datadir}/gdm/themes/Bluecurve
