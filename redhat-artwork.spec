@@ -1,6 +1,7 @@
-
-%bcond_without kde
-
+#
+# Conditional build
+%bcond_without	kde
+#
 Summary:	Bluecurve look & feel
 Summary(pl):	Wygl±dy Bluecurve
 Name:		redhat-artwork
@@ -12,6 +13,7 @@ Source0:	http://ep09.pld-linux.org/~djurban/pld/%{name}-%{version}.tar.bz2
 # Source0-md5:	f57880d4fb5a1faacbfda90307cc4ebb
 Patch0:		%{name}-DESTDIR.patch
 Patch1:		%{name}-am.patch
+Patch2:		%{name}-mouse_position.patch
 URL:		http://www.redhat.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -188,7 +190,7 @@ Motyw Bluecurve dla GDM-a.
 %setup -q
 %patch0 -p1
 %patch1 -p1 -b .niedakh
-
+%patch2 -p1
 
 %build
 %if %{without kde}
