@@ -1,0 +1,12 @@
+--- redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am.orig	2003-09-06 01:22:13.000000000 +0200
++++ redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am	2003-09-06 01:21:59.000000000 +0200
+@@ -3,7 +3,8 @@
+ kde_module_LTLIBRARIES = kwin_bluecurve.la
+ 
+ kwin_bluecurve_la_SOURCES = redhatclient.cpp
+-kwin_bluecurve_la_LIBADD = $(kde_libraries)/kwin.la
++#kwin_bluecurve_la_LIBADD = $(kde_libraries)/kwin.la
++kwin_bluecurve_la_LIBADD = $(kde_libraries)/kde3/kwin.la
+ kwin_bluecurve_la_LDFLAGS = $(all_libraries) -module
+ 
+ themedir = $(datadir)/apps/kwin
