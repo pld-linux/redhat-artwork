@@ -1,6 +1,16 @@
-diff -urN redhat-artwork-0.73/art/cursor/Bluecurve/Makefile.am /root/2/redhat-artwork-0.73/art/cursor/Bluecurve/Makefile.am
---- redhat-artwork-0.73/art/cursor/Bluecurve/Makefile.am	Mon Feb 24 06:06:19 2003
-+++ /root/2/redhat-artwork-0.73/art/cursor/Bluecurve/Makefile.am	Thu Aug 14 16:35:30 2003
+diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/Makefile.am redhat-artwork-0.78/art/Makefile.am
+--- /home/users/builder/1orig/redhat-artwork-0.78/art/Makefile.am	Wed Aug  6 11:07:57 2003
++++ redhat-artwork-0.78/art/Makefile.am	Fri Aug 15 15:19:22 2003
+@@ -1,5 +1,5 @@
+ ## icon must be built before gtk, or the gtkrc won't get the stock icons
+-SUBDIRS=tools cursor nautilus xmms gdm icon gtk metacity kde qt
++SUBDIRS=tools cursor nautilus xmms gdm gtk metacity kde qt
+ 
+ themedir = $(datadir)/themes/Bluecurve
+ theme_DATA = index.theme
+diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/cursor/Bluecurve/Makefile.am redhat-artwork-0.78/art/cursor/Bluecurve/Makefile.am
+--- /home/users/builder/1orig/redhat-artwork-0.78/art/cursor/Bluecurve/Makefile.am	Mon Feb 24 08:13:11 2003
++++ redhat-artwork-0.78/art/cursor/Bluecurve/Makefile.am	Fri Aug 15 15:04:57 2003
 @@ -57,13 +57,13 @@
  	rm -rf Bluecurve
  
@@ -19,9 +29,9 @@ diff -urN redhat-artwork-0.73/art/cursor/Bluecurve/Makefile.am /root/2/redhat-ar
            fi ;										\
  	done
  
-diff -urN redhat-artwork-0.73/art/cursor/Bluecurve-inverse/Makefile.am /root/2/redhat-artwork-0.73/art/cursor/Bluecurve-inverse/Makefile.am
---- redhat-artwork-0.73/art/cursor/Bluecurve-inverse/Makefile.am	Mon Feb 24 06:06:19 2003
-+++ /root/2/redhat-artwork-0.73/art/cursor/Bluecurve-inverse/Makefile.am	Thu Aug 14 16:35:47 2003
+diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/cursor/Bluecurve-inverse/Makefile.am redhat-artwork-0.78/art/cursor/Bluecurve-inverse/Makefile.am
+--- /home/users/builder/1orig/redhat-artwork-0.78/art/cursor/Bluecurve-inverse/Makefile.am	Mon Feb 24 08:13:17 2003
++++ redhat-artwork-0.78/art/cursor/Bluecurve-inverse/Makefile.am	Fri Aug 15 15:05:36 2003
 @@ -57,13 +57,13 @@
  	rm -rf Bluecurve-inverse
  
@@ -40,9 +50,19 @@ diff -urN redhat-artwork-0.73/art/cursor/Bluecurve-inverse/Makefile.am /root/2/r
            fi ;												\
  	done
  
-diff -urN redhat-artwork-0.73/art/kde/kwin/Bluecurve/Makefile.am /root/2/redhat-artwork-0.73/art/kde/kwin/Bluecurve/Makefile.am
---- redhat-artwork-0.73/art/kde/kwin/Bluecurve/Makefile.am	Fri Sep 13 17:07:28 2002
-+++ /root/2/redhat-artwork-0.73/art/kde/kwin/Bluecurve/Makefile.am	Thu Aug 14 16:26:01 2003
+diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/icon/Makefile.am redhat-artwork-0.78/art/icon/Makefile.am
+--- /home/users/builder/1orig/redhat-artwork-0.78/art/icon/Makefile.am	Wed Aug  6 11:07:57 2003
++++ redhat-artwork-0.78/art/icon/Makefile.am	Fri Aug 15 15:31:13 2003
+@@ -110,5 +110,5 @@
+ # 		(iconfiles=`find $(srcdir)/$$THEME -name "*.icon"`;			\
+ # 		 for icon in $$iconfiles; do						\
+ # 			cp -f $$icon $(distdir)/$$icon || exit 1;			\
+-# 		 done);									\
++# 		 done);
+ 
+diff -urN /home/users/builder/1orig/redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am
+--- /home/users/builder/1orig/redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am	Fri Sep 13 17:07:28 2002
++++ redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am	Fri Aug 15 14:19:21 2003
 @@ -4,7 +4,7 @@
  
  kwin_bluecurve_la_SOURCES = redhatclient.cpp
@@ -52,17 +72,3 @@ diff -urN redhat-artwork-0.73/art/kde/kwin/Bluecurve/Makefile.am /root/2/redhat-
  
  themedir = $(datadir)/apps/kwin
  theme_DATA = bluecurve.desktop
-diff -urN redhat-artwork-0.73/art/pixmaps/Makefile.am /root/2/redhat-artwork-0.73/art/pixmaps/Makefile.am
---- redhat-artwork-0.73/art/pixmaps/Makefile.am	Mon Jan 27 20:14:53 2003
-+++ /root/2/redhat-artwork-0.73/art/pixmaps/Makefile.am	Thu Aug 14 16:28:50 2003
-@@ -28,8 +28,8 @@
- EXTRA_DIST=$(pixmap_DATA)
- 
- install-data-local:
--	mkdir -p $(datadir)/icons/Bluecurve/48x48/apps; \
--	(cd $(datadir)/icons/Bluecurve/48x48/apps;	\
-+	mkdir -p $(DESTDIR)$(datadir)/icons/Bluecurve/48x48/apps; \
-+	(cd $(DESTDIR)$(datadir)/icons/Bluecurve/48x48/apps;	\
- 	 for icon in $(pixmap_DATA); do			\
- 		ln -s ../../../../pixmaps/$$icon . ;	\
- 	 done);
