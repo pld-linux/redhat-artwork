@@ -1,12 +1,30 @@
---- redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am.orig	2003-09-06 01:22:13.000000000 +0200
-+++ redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am	2003-09-06 01:21:59.000000000 +0200
-@@ -3,7 +3,8 @@
+diff -Nuard redhat-artwork-0.78.orig/art/kde/kwin/Bluecurve/Makefile.am redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am
+--- redhat-artwork-0.78.orig/art/kde/kwin/Bluecurve/Makefile.am	2003-09-20 04:17:40.000000000 +0200
++++ redhat-artwork-0.78/art/kde/kwin/Bluecurve/Makefile.am	2003-09-20 04:28:38.000000000 +0200
+@@ -3,7 +3,7 @@
  kde_module_LTLIBRARIES = kwin_bluecurve.la
  
  kwin_bluecurve_la_SOURCES = redhatclient.cpp
 -kwin_bluecurve_la_LIBADD = $(kde_libraries)/kwin.la
-+#kwin_bluecurve_la_LIBADD = $(kde_libraries)/kwin.la
-+kwin_bluecurve_la_LIBADD = $(kde_libraries)/kde3/kwin.la
++kwin_bluecurve_la_LIBADD = $(kde_libraries_kwin)
  kwin_bluecurve_la_LDFLAGS = $(all_libraries) -module
  
  themedir = $(datadir)/apps/kwin
+diff -Nuard redhat-artwork-0.78.orig/configure.in redhat-artwork-0.78/configure.in
+--- redhat-artwork-0.78.orig/configure.in	2003-08-08 14:44:03.000000000 +0200
++++ redhat-artwork-0.78/configure.in	2003-09-20 04:29:02.000000000 +0200
+@@ -39,6 +39,14 @@
+ fi
+ changequote([,])dnl
+ 
++if test -f "$(kde_libraries)/kwin.la" ; then
++ 	kde_libraries_kwin=$(kde_libraries)/kwin.la
++fi
++if test -f "$(kde_libraries)/kde3/kwin.la" ; then
++	kde_libraries_kwin=$(kde_libraries)/kde3/kwin.la
++fi
++
++
+ #PKG_CHECK_MODULES(DESKTOP_FILE_UTILS, glib-2.0 >= 2.0.0)
+ #AC_SUBST(DESKTOP_FILE_UTILS_CFLAGS)
+ #AC_SUBST(DESKTOP_FILE_UTILS_LIBS)
