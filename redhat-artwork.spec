@@ -6,7 +6,7 @@ Summary:	Bluecurve look & feel
 Summary(pl):	Wygl±dy Bluecurve
 Name:		redhat-artwork
 Version:	0.117
-Release:	1
+Release:	2
 Group:		Themes
 License:	GPL
 Source0:	ftp://distfiles.pld-linux.org/src/%{name}-%{version}.tar.gz
@@ -18,8 +18,8 @@ URL:		http://www.redhat.com/
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gdk-pixbuf-devel
-BuildRequires:	gtk+-devel
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+-devel >= 1.2.9
+BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	icon-slicer
 %if %{with kde}
 BuildRequires:	kdebase-devel >= 3.1.90
@@ -230,6 +230,8 @@ install -d $RPM_BUILD_ROOT%{_libdir}/qt/plugins-mt/styles
 #
 #rm -f $RPM_BUILD_ROOT%{_libdir}/gtk*/*/engines/libbluecurve.la \
 #	$RPM_BUILD_ROOT%{_libdir}/qt-*/plugins/styles/bluecurve.la
+
+rm -r $RPM_BUILD_ROOT%{_datadir}/locale/no
 
 # locales for gdm theme
 %find_lang %{name}
