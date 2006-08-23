@@ -6,7 +6,7 @@ Summary:	Bluecurve look & feel
 Summary(pl):	Wygl±dy Bluecurve
 Name:		redhat-artwork
 Version:	0.117
-Release:	2
+Release:	3
 Group:		Themes
 License:	GPL
 Source0:	ftp://distfiles.pld-linux.org/src/%{name}-%{version}.tar.gz
@@ -165,8 +165,7 @@ Motyw Bluecurve dla KDE.
 %package -n XcursorTheme-Bluecurve
 Summary:	Bluecurve cursor pack
 Summary(pl):	Motyw kursorów Bluecurve
-Group:		X11/XFree86
-Requires:	XFree86 
+Group:		Themes
 Obsoletes:	XFree86-Xcursor-packs-Bluecurve
 
 %description -n XcursorTheme-Bluecurve
