@@ -6,7 +6,7 @@ Summary:	Bluecurve look & feel
 Summary(pl):	Wygl±dy Bluecurve
 Name:		redhat-artwork
 Version:	0.117
-Release:	3
+Release:	4
 Group:		Themes
 License:	GPL
 Source0:	ftp://distfiles.pld-linux.org/src/%{name}-%{version}.tar.gz
@@ -27,6 +27,7 @@ BuildRequires:	kdebase-devel >= 3.1.90
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
 BuildRequires:	qt-devel >= 3.0
+BuildRequires:	xorg-app-xcursorgen
 BuildRequires:	zip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
