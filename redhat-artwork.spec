@@ -194,7 +194,7 @@ Motyw Bluecurve dla GDM-a.
 #%patch2 -p1
 
 %build
-%if %{without kde}
+%if !%{with kde}
 sed -i -e "s,kde ,," art/Makefile.am
 rm -rf art/kde/kwin/Bluecurve/configure.in.in
 %endif
