@@ -3,7 +3,7 @@
 %bcond_without	kde
 #
 Summary:	Bluecurve look & feel
-Summary(pl):	Wygl眃y Bluecurve
+Summary(pl.UTF-8):   Wygl膮dy Bluecurve
 Name:		redhat-artwork
 Version:	0.117
 Release:	4
@@ -34,12 +34,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Bluecurve look & feel.
 
-%description -l pl
-Wygl眃y Bluecurve.
+%description -l pl.UTF-8
+Wygl膮dy Bluecurve.
 
 %package -n icons-Bluecurve
 Summary:	Bluecurve icons
-Summary(pl):	Ikony Bluecurve
+Summary(pl.UTF-8):   Ikony Bluecurve
 Group:		Themes
 # contains dir used by icons
 Requires:	XcursorTheme-Bluecurve
@@ -47,12 +47,12 @@ Requires:	XcursorTheme-Bluecurve
 %description -n icons-Bluecurve
 Bluecurve icons for GNOME & KDE.
 
-%description -n icons-Bluecurve -l pl
+%description -n icons-Bluecurve -l pl.UTF-8
 Ikony Bluecurve dla GNOME i KDE.
 
 %package -n gtk-theme-engine-Bluecurve
 Summary:	GTK+ Bluecurve theme
-Summary(pl):	Bluecurve dla GTK+
+Summary(pl.UTF-8):   Bluecurve dla GTK+
 Group:		Themes
 Requires:	icons-Bluecurve
 Obsoletes:	gtk2-theme-engine-Wonderland
@@ -61,12 +61,12 @@ Obsoletes: 	gnome-theme-Bluecurve < 0.89
 %description -n gtk-theme-engine-Bluecurve
 GTK+ Bluecurve theme.
 
-%description -n gtk-theme-engine-Bluecurve -l pl
+%description -n gtk-theme-engine-Bluecurve -l pl.UTF-8
 Motyw Bluecurve dla GTK.
 
 %package -n metacity-themes-Bluecurve-redhat
 Summary:	Metacity Bluecurve theme
-Summary(pl):	Bluecurve dla Metacity
+Summary(pl.UTF-8):   Bluecurve dla Metacity
 Group:		Themes
 Requires:	icons-Bluecurve
 Requires:	metacity
@@ -79,12 +79,12 @@ Conflicts:	metacity-themes-Bluecurve
 %description -n metacity-themes-Bluecurve-redhat
 GTK+ Bluecurve Metacity.
 
-%description -n metacity-themes-Bluecurve-redhat -l pl
+%description -n metacity-themes-Bluecurve-redhat -l pl.UTF-8
 Motyw Bluecurve dla Metacity.
 
 %package -n gnome-theme-Bluecurve
 Summary:	GNOME Bluecurve theme
-Summary(pl):	Bluecurve dla GNOME
+Summary(pl.UTF-8):   Bluecurve dla GNOME
 Group:		Themes
 Requires:	icons-Bluecurve
 Requires:	metacity-themes-Bluecurve-redhat
@@ -97,12 +97,12 @@ Obsoletes:	metacity-theme-Bluecurve
 %description -n gnome-theme-Bluecurve
 GNOME Bluecurve theme (gtk, gtk2, metacity, nautilus).
 
-%description -n gnome-theme-Bluecurve -l pl
+%description -n gnome-theme-Bluecurve -l pl.UTF-8
 Motyw Bluecurve dla GNOME (gtk, gtk2, metacity, nautilus).
 
 %package -n gtk2-theme-engine-Bluecurve
 Summary:	GTK+2 Bluecurve theme
-Summary(pl):	Bluecurve dla GTK+2
+Summary(pl.UTF-8):   Bluecurve dla GTK+2
 Group:		Themes
 Requires:	icons-Bluecurve
 Obsoletes:	gtk2-theme-engine-Wonderland
@@ -112,79 +112,79 @@ Obsoletes:	gnome-theme-Bluecurve < 0.89
 %description -n gtk2-theme-engine-Bluecurve
 GTK+2 Bluecurve theme.
 
-%description -n gtk2-theme-engine-Bluecurve -l pl
+%description -n gtk2-theme-engine-Bluecurve -l pl.UTF-8
 Motyw Bluecurve dla GTK+2.
 
 %package -n nautilus-theme-Bluecurve
 Summary:	Nautilus Bluecurve theme
-Summary(pl):	Bluecurve dla Nautilusa
+Summary(pl.UTF-8):   Bluecurve dla Nautilusa
 Group:		Themes
 Requires:	nautilus
 
 %description -n nautilus-theme-Bluecurve
 Nautilus Bluecurve theme.
 
-%description -n nautilus-theme-Bluecurve -l pl
+%description -n nautilus-theme-Bluecurve -l pl.UTF-8
 Motyw Bluecurve dla Nautilusa.
 
 %package -n xmms-skin-Bluecurve
 Summary:	XMMS skin taken from Bluecurve
-Summary(pl):	Sk髍ka dla XMMS-a w stylu Bluecurve
+Summary(pl.UTF-8):   Sk贸rka dla XMMS-a w stylu Bluecurve
 Group:		X11/Applications/Multimedia
 Requires:	xmms
 
 %description -n xmms-skin-Bluecurve
 XMMS skin taken from Bluecurve.
 
-%description -n xmms-skin-Bluecurve -l pl
-Sk髍ka dla XMMS-a w stylu Bluecurve.
+%description -n xmms-skin-Bluecurve -l pl.UTF-8
+Sk贸rka dla XMMS-a w stylu Bluecurve.
 
 %package -n qt-style-Bluecurve
 Summary:	Bluecurve Qt style
-Summary(pl):	Styl Bluecurve dla Qt
+Summary(pl.UTF-8):   Styl Bluecurve dla Qt
 Group:		Themes
 Requires:	qt >= 3.0
 
 %description -n qt-style-Bluecurve
 Bluecurve Qt style.
 
-%description -n qt-style-Bluecurve -l pl
+%description -n qt-style-Bluecurve -l pl.UTF-8
 Styl Bluecurve dla Qt.
 
 %package -n kde-theme-Bluecurve
 Summary:	Bluecurve KDE theme
-Summary(pl):	Motyw Bluecurve dla KDE
+Summary(pl.UTF-8):   Motyw Bluecurve dla KDE
 Group:		Themes
 Requires:	qt-style-Bluecurve
 
 %description -n kde-theme-Bluecurve
 Bluecurve KDE theme.
 
-%description -n kde-theme-Bluecurve -l pl
+%description -n kde-theme-Bluecurve -l pl.UTF-8
 Motyw Bluecurve dla KDE.
 
 %package -n XcursorTheme-Bluecurve
 Summary:	Bluecurve cursor pack
-Summary(pl):	Motyw kursor體 Bluecurve
+Summary(pl.UTF-8):   Motyw kursor贸w Bluecurve
 Group:		Themes
 Obsoletes:	XFree86-Xcursor-packs-Bluecurve
 
 %description -n XcursorTheme-Bluecurve
 Bluecurve cursor pack.
 
-%description -n XcursorTheme-Bluecurve -l pl
-Motyw kursor體 Bluecurve.
+%description -n XcursorTheme-Bluecurve -l pl.UTF-8
+Motyw kursor贸w Bluecurve.
 
 %package -n gdm-theme-Bluecurve
 Summary:	Bluecurve GDM theme
-Summary(pl):	Motyw Bluecurve dla GDM-a
+Summary(pl.UTF-8):   Motyw Bluecurve dla GDM-a
 Group:		Themes
 Requires:	gdm >= 2.4
 
 %description -n gdm-theme-Bluecurve
 Bluecurve GDM theme.
 
-%description -n gdm-theme-Bluecurve -l pl
+%description -n gdm-theme-Bluecurve -l pl.UTF-8
 Motyw Bluecurve dla GDM-a.
 
 %prep
