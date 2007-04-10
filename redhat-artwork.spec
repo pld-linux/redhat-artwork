@@ -26,7 +26,7 @@ BuildRequires:	kdebase-devel >= 3.1.90
 %endif
 BuildRequires:	libtool
 BuildRequires:	pkgconfig
-BuildRequires:	qt-devel >= 3.0
+BuildRequires:	qt-devel >= 1:3.0
 BuildRequires:	xorg-app-xcursorgen
 BuildRequires:	zip
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
