@@ -6,7 +6,7 @@ Summary:	Bluecurve look & feel
 Summary(pl.UTF-8):	Wyglądy Bluecurve
 Name:		redhat-artwork
 Version:	0.117
-Release:	4
+Release:	5
 Group:		Themes
 License:	GPL
 Source0:	ftp://distfiles.pld-linux.org/src/%{name}-%{version}.tar.gz
