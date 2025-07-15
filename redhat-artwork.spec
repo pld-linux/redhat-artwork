@@ -191,7 +191,7 @@ Motyw Bluecurve dla GDM-a.
 %setup -q
 %patch -P0 -p1
 %patch -P1 -p1 -b .niedakh
-#%patch2 -p1
+#%%patch2 -p1
 
 %build
 %if !%{with kde}
